@@ -13,3 +13,4 @@ declare const API_HOST_LIST: string;
 
 declare const SENTRY_DSN: string;
 declare const RELEASE_NAME: string;
+declare const GUEST_BEARER_TOKEN: string;

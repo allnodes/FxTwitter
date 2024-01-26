@@ -17,7 +17,8 @@
     "REDIRECT_URL": "https://github.com/FixTweet/FxTwitter",
     "EMBED_URL": "https://github.com/FixTweet/FxTwitter",
     "RELEASE_NAME": "fixtweet-test",
-    "SENTRY_DSN": null
+    "SENTRY_DSN": null,
+    "GUEST_BEARER_TOKEN": null
   },
   "testRegex": "/test/.*\\.test\\.ts$",
   "collectCoverageFrom": ["src/**/*.{ts,js}"]

@@ -25,3 +25,18 @@ export const processMedia = (media: TweetMedia): APIPhoto | APIVideo | null => {
   }
   return null;
 };
+
+export const convertVideoToPhoto = (video: APIVideo): APIPhoto | APIVideo => {
+  try {
+    return {
+      type: 'photo',
+      url: video.thumbnail_url,
+      width: video.width,
+      height: video.height,
+      altText: ''
+    };  
+  } catch (error) {
+    console.log(`error converting meta to APIPhoto: [${error}]`);
+    return video;
+  }
+};

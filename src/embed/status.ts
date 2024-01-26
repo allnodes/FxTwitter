@@ -16,7 +16,9 @@ export const returnError = (c: Context, error: string): Response => {
       lang: '',
       headers: [
         `<meta property="og:title" content="${Constants.BRANDING_NAME}"/>`,
-        `<meta property="og:description" content="${error}"/>`
+        `<meta property="og:image" content="https://www.allnodes.com/img/thumbnails/allnodes-4.jpg?v=2"/>`,
+        `<meta property="twitter:card" content="summary_large_image"/>`,
+        `<meta property="twitter:image" content="https://www.allnodes.com/img/thumbnails/allnodes-4.jpg?v=2"/>`,
       ].join('')
     })
   ) as Response;

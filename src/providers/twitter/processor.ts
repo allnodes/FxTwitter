@@ -3,7 +3,7 @@ import { Constants } from '../../constants';
 import { linkFixer } from '../../helpers/linkFixer';
 import { handleMosaic } from '../../helpers/mosaic';
 import { unescapeText } from '../../helpers/utils';
-import { processMedia } from '../../helpers/media';
+import { processMedia, convertVideoToPhoto } from '../../helpers/media';
 import { convertToApiUser } from './profile';
 import { translateStatus } from '../../helpers/translate';
 import { Context } from 'hono';
@@ -36,6 +36,8 @@ export const buildAPITwitterStatus = async (
   if (typeof status.views === 'undefined' && typeof status?.tweet?.views !== 'undefined') {
     status.views = status?.tweet?.views;
   }
+
+  console.log(`Status: [${status}]`);
 
   if (typeof status.core === 'undefined') {
     console.log('Status still not valid', status);
@@ -167,12 +169,15 @@ export const buildAPITwitterStatus = async (
     status.legacy.extended_entities?.media || status.legacy.entities?.media || []
   );
 
-  // console.log('status', JSON.stringify(status));
+  console.log('status', JSON.stringify(status));
 
   /* Populate status media */
   mediaList.forEach(media => {
-    const mediaObject = processMedia(media);
+    let mediaObject = processMedia(media);
     if (mediaObject) {
+      // if (mediaObject.type === 'video') {
+      //   mediaObject = convertVideoToPhoto(mediaObject);
+      // }
       apiStatus.media.all = apiStatus.media?.all ?? [];
       apiStatus.media?.all?.push(mediaObject);
       if (mediaObject.type === 'photo') {
@@ -186,6 +191,7 @@ export const buildAPITwitterStatus = async (
       } else {
         console.log('Unknown media type', mediaObject.type);
       }
+      console.log(`media: ${JSON.stringify(apiStatus.media)}`);
     }
   });
 
@@ -215,6 +221,7 @@ export const buildAPITwitterStatus = async (
   /* Populate a Twitter card */
 
   if (status.card) {
+    console.log(`card: [${JSON.stringify(status.card)}]`)
     const card = renderCard(status.card);
     if (card.external_media) {
       apiStatus.embed_card = 'player';
@@ -293,5 +300,6 @@ export const buildAPITwitterStatus = async (
     }
   }
 
+  console.log(`apiStatus: [${JSON.stringify(apiStatus)}]`);
   return apiStatus;
 };

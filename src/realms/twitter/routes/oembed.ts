@@ -18,10 +18,10 @@ export const oembed = async (c: Context) => {
   const statusUrl = `${Constants.TWITTER_ROOT}/${encodeURIComponent(author)}/status/${status}`;
 
   const data: OEmbed = {
-    author_name: text,
+    author_name: searchParams.get('provider_name') ?? (searchParams.get('provider') ?? name),
     author_url: statusUrl,
-    provider_name: searchParams.get('provider') ?? name,
-    provider_url: searchParams.get('provider') ? statusUrl : url,
+    provider_name: author,
+    provider_url: searchParams.get('provider_url') ?? (searchParams.get('provider') ? statusUrl : url),
     title: Strings.DEFAULT_AUTHOR_TEXT,
     type: 'link',
     version: '1.0'

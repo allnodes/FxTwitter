@@ -17,19 +17,23 @@ String.prototype.format = function (options: { [find: string]: string }) {
 /* Lots of strings! These are strings used in HTML or are shown to end users in embeds. */
 export const Strings = {
   BASE_HTML: `<!DOCTYPE html><html {lang}><!--
-
-   █████ ▐█▌       ███████████                              ███
- ███      █            ███                                  ███
-███                    ███                                  ███
-███      ███  ███  ███ ███  ███  ███  ███  ██████   ██████  ██████
-███████▌ ███   ▐█▌▐█▌  ███  ███  ███  ███ ▐█▌  ▐█▌ ▐█▌  ▐█▌ ███
-███      ███    ▐██▌   ███  ███  ███  ███ ████████ ████████ ███
-███      ███   ▐█▌▐█▌  ███  ▐██▌ ███ ▐██▌ ▐█▌      ▐█▌      ▐██▌
-███      ███  ███  ███ ███   ▐█████████▌    ▐████    ▐████    ▐████
-███
-███   A better way to embed Tweets on Discord, Telegram, and more.
-███   Worker build ${RELEASE_NAME}
-
+                                                                                                                                                                                    
+                                  ===≠====≠=                                                                                                                                        
+                               ≈=×----------×÷=                                                                                                                                     
+                             ==×---------------×=≠                             ≠÷≈   ≈÷≈                                                                                            
+                           =÷-------×÷==≠÷×------×=                ≈≠≠≠≠      ÷÷-÷= =×-×≠                                     ∞≠≠≈                                                  
+                          -×--------×     =-------×=              ÷÷----÷     ××--÷ ÷---=                                     ÷--=                                                  
+                          ×---------×÷     =×------÷              ÷-×××-×=    ××--÷ ÷---=  ≠≠=÷≠≠=≠≠       ===≠==       ===≠=××--=     ≈≠=≠=≈      ≈≠====                           
+                         =+----------+÷     ≠×------≠            =×-÷ =×-×≠   ××--÷ ÷---= ≠---×=÷×-×÷    ≠××=≠=×÷==   ≈=××=≠=×---=   ≠===≠=××==  ∞÷×-×÷÷=≈                          
+                         =------×===÷××=     =×-----≠           ≈×--÷  ×--=   ××--÷ ÷---= ≠--×=  √×--= ∞÷××=   =×-×≈ ≈×-×≠   =×--=  ÷--×   ---×≠ ≠---- ×+                           
+                         ÷×----×÷    --×≠     =-----=           ÷--+×==---×=  ××--÷ ÷---= ≠--÷    ÷--= =--×     ÷--≠ =--×     ×--= ≠×--×÷≠÷×---≠  ÷÷×÷××÷-                          
+                          ÷---×=    ÷×--×=     -+--÷           =×-----×----÷÷ ××--÷ ÷---= ≠--≠    =--= ≠×-×=    ×-×≈ ≠--×    ÷×--=  ×-------+-××   × +---÷≈                         
+                          ×÷×÷×    ×÷----×=     ××÷÷           ÷-+--÷÷÷÷÷×--÷ -×-×= =--×= ≠--≠    =--=  ≈=××===××÷≠   =×-×=≠÷×---=  ≠=×--+---×=  ≈÷÷-----÷≠                         
+                           ×≠=    ÷×------×=     ≠=           √≈==       ≠≠≠≈≠ ≠=≠÷ =≠=≠  ≠≠=∞    ∞=≠≈    ≈≠≠==≠=÷     ≠=≠≠≠≠=≠=≠≈    ≠≠≠≠≠≠=≈    =≠==≠=≠÷                          
+                                 ≈×--------×=                                                                                                                                       
+                                 ≈×--------×=≈                                                                                                                                      
+                                  ≈==≠=≠≠=≠≠                                                                                                                                        
+                                                                                                                                                                                    
 --><head>{headers}</head><body>{body}</body></html>`,
   ERROR_HTML: `<!DOCTYPE html>
 <html lang="en">
@@ -214,8 +218,8 @@ This may be caused by API downtime or a new bug. Try again in a little while." p
   ERROR_API_FAIL:
     'Post failed to load due to an API error. The account may be private or suspended, or there may be another issue :(',
   ERROR_PRIVATE: `Sorry, we can't embed this post because the user is private or suspended :(`,
-  ERROR_TWEET_NOT_FOUND: `Sorry, that post doesn't exist :(`,
-  ERROR_USER_NOT_FOUND: `Sorry, that user doesn't exist :(`,
+  ERROR_TWEET_NOT_FOUND: `https://www.allnodes.com`,
+  ERROR_USER_NOT_FOUND: `https://www.allnodes.com`,
   ERROR_UNKNOWN: `Unknown error occurred, sorry about that :(`,
 
   ROBOTS_TXT: `# /-------------------------------------------\\
